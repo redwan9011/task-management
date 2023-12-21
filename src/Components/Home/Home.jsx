@@ -1,14 +1,20 @@
-import { Link } from "react-router-dom";
+
 import Navbar from "../Navbar/Navbar";
+import Banner from "../Banner/Banner";
+import Footer from "../Footer/Footer";
+import UsingPeople from "../UsingPeople/UsingPeople";
 
 
 const Home = () => {
 
     return (
-        <div>
+        <div >
             <Navbar></Navbar>
-            <Link to='/Dashboard'>Explore</Link>
-           
+           <div className="max-w-6xl mx-auto">
+             <Banner></Banner>
+             <UsingPeople></UsingPeople>
+           </div>
+           <Footer></Footer>
         </div>
     );
 };

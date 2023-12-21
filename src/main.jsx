@@ -15,6 +15,7 @@ import PrivateRout from './PrivateRout/PrivateRout';
 
 import UserProfile from './Dashboard/UserProfile';
 import CreateTask from './Dashboard/CreateTask';
+import Todo from './Dashboard/Todo';
 
 
 const router = createBrowserRouter([
@@ -48,13 +49,32 @@ const router = createBrowserRouter([
         path: 'createTask',
         element: <PrivateRout><CreateTask></CreateTask></PrivateRout>
       },
+      {
+        path: 'todo',
+        element: <PrivateRout> <Todo></Todo> </PrivateRout>
+      },
+      {
+        path: 'update/:id',
+        element: <PrivateRout> <UpdateTask></UpdateTask> </PrivateRout>,
+        loader:  ({params})=> fetch( ` http://localhost:5000/tasks/${params.id}`)
+
+      },
     ]
   }
 ]);
+
+import { QueryClient, QueryClientProvider, } from '@tanstack/react-query'
+import UpdateTask from './Dashboard/UpdateTask';
+
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
+
   </React.StrictMode>,
 )

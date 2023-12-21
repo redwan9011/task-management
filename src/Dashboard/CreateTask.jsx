@@ -9,11 +9,11 @@ const CreateTask = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        axios.post('http://localhost:5000/tasks' , data)
-        .then( res => {
-            console.log(res.data);
-            alert('task added')
-        })
+        axios.post('http://localhost:5000/tasks', data)
+            .then(res => {
+                console.log(res.data);
+                alert('task added')
+            })
     }
     return (
         <div>
@@ -37,15 +37,15 @@ const CreateTask = () => {
                 <label className="label">
                     <span className="label-text">Priority</span>
                 </label>
-      <select {...register("priority")} className=" select select-bordered">
-      <option disabled selected>Select one</option>
-        <option value="low">Low</option>
-        <option value="moderate">Moderate</option>
-        <option value="high">High</option>
-      </select>
-             
+                <select {...register("priority")} className=" select select-bordered">
+                    <option disabled selected>Select one</option>
+                    <option value="low">Low</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="high">High</option>
+                </select>
 
-                <input type="submit" value={`Create Task`} className="w-full btn btn-outline mt-3"/>
+
+                <input type="submit" value={`Create Task`} className="w-full btn btn-outline mt-3" />
             </form>
         </div>
     );

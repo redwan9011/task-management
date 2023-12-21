@@ -1,7 +1,7 @@
 
 const UsingPeople = () => {
     return (
-        <div className="h-60">
+        <div className="">
             Many profession people use it
         </div>
     );

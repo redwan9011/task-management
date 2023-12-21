@@ -8,6 +8,7 @@ const Dashboard = () => {
            <div className="col-span-3 flex flex-col bg-slate-500 h-screen pt-10 items-center text-white">
              <Link to='/dashboard/profile' className="w-fit"> Profile</Link>
              <Link to='/dashboard/createTask' className="w-fit"> Create Task</Link>
+             <Link to='/dashboard/todo' className="w-fit"> To-Do</Link>
              <div className="divider divider-neutral"></div>
              <Link to='/' className="w-fit"> Home</Link>
            </div>

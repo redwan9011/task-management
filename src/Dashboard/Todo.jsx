@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-
+// import { DragDropContext } from 'react-beautiful-dnd';
 
 const Todo = () => {
     const {refetch, data: tasks = [] } = useQuery({
@@ -42,8 +42,12 @@ const Todo = () => {
         });
     }
 
+  
     return (
-        <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 text-center gap-3">
+
+          <div className="border border-black">
+            <h1 className="text-xl font-bold underline ">Todo</h1>
            {
             tasks.map( task => <div key={task._id} >
                 <div >
@@ -60,6 +64,13 @@ const Todo = () => {
             </div>)
            }
         </div>
+        <div className="border border-black">
+            <h1 className="text-xl font-bold underline ">On going</h1>
+        </div>
+        <div className="border border-black">
+            <h1 className="text-xl font-bold underline ">Completed</h1>
+        </div>
+      </div>
     );
 };
 

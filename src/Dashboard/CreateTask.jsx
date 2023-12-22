@@ -1,9 +1,13 @@
 import { useForm } from "react-hook-form"
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const CreateTask = () => {
     const {
         register,
         handleSubmit,
+        reset
     } = useForm()
 
 
@@ -12,7 +16,8 @@ const CreateTask = () => {
         axios.post('http://localhost:5000/tasks', data)
             .then(res => {
                 console.log(res.data);
-                alert('task added')
+                toast("Create your task succefully");
+                reset()
             })
     }
     return (
@@ -46,6 +51,7 @@ const CreateTask = () => {
 
 
                 <input type="submit" value={`Create Task`} className="w-full btn btn-outline mt-3" />
+                <ToastContainer />
             </form>
         </div>
     );

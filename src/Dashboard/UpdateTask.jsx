@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateTask = () => {
     const task = useLoaderData()
@@ -18,7 +19,7 @@ const UpdateTask = () => {
         axios.put(`http://localhost:5000/tasks/${task._id}`, data)
             .then(res => {
                 console.log(res.data);
-                alert('task added')
+                toast("Update your task succefully");
             })
     }
 
@@ -53,7 +54,8 @@ const UpdateTask = () => {
             </select>
 
 
-            <input type="submit" value={`Update Task`} className="w-full btn btn-outline mt-3" />
+          <button >  <input type="submit" value={`Update Task`}  className="w-full btn btn-outline mt-3" /></button>
+          <ToastContainer />
         </form>
     </div>
     );

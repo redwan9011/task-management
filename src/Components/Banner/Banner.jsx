@@ -10,7 +10,7 @@ const Banner = () => {
                 
                 <div className="flex justify-end w-full h-full items-end mr-20 md:mr-48 md:mt-6 lg:mr-96 lg:mb-10">
                     <div className="">
-                        <Link to='/Dashboard/profile' className="btn btn-outline btn-xs  md:btn-md "> {`Let's Explore`}</Link>
+                        <Link to='/Dashboard/profile' className="btn btn-outline btn-xs  md:btn-md lg:btn-lg"> {`Let's Explore`}</Link>
                     </div>
                 </div>
             </div>

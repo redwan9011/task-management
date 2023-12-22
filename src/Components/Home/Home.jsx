@@ -1,7 +1,5 @@
 
-import Navbar from "../Navbar/Navbar";
 import Banner from "../Banner/Banner";
-import Footer from "../Footer/Footer";
 import UsingPeople from "../UsingPeople/UsingPeople";
 
 
@@ -9,12 +7,12 @@ const Home = () => {
 
     return (
         <div >
-            <Navbar></Navbar>
-           <div className="max-w-6xl mx-auto">
+           
+           <div className="max-w-6xl mx-auto px-5 md:px-8 lg:px-0">
              <Banner></Banner>
              <UsingPeople></UsingPeople>
            </div>
-           <Footer></Footer>
+           
         </div>
     );
 };

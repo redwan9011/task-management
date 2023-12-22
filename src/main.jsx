@@ -28,14 +28,23 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: '/audience',
+        element: <UsingPeople></UsingPeople>
       },
       {
-        path: '/register',
-        element: <Register></Register>
+        path: '/about',
+        element: <AboutUs></AboutUs>
       },
+    
     ]
+  },
+  {
+    path: '/login',
+    element: <Login></Login>
+  },
+  {
+    path: '/register',
+    element: <Register></Register>
   },
   {
     path: '/dashboard',
@@ -65,6 +74,8 @@ const router = createBrowserRouter([
 
 import { QueryClient, QueryClientProvider, } from '@tanstack/react-query'
 import UpdateTask from './Dashboard/UpdateTask';
+import UsingPeople from './Components/UsingPeople/UsingPeople';
+import AboutUs from './Components/AboutUs/AboutUs';
 
 const queryClient = new QueryClient()
 
